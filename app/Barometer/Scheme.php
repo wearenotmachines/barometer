@@ -3,20 +3,20 @@
 use Barometer\Traits\ValidatableTrait;
 use Barometer\Traits\CreatedByTrait;
 
-
-class Team extends \Eloquent {
+class Scheme extends \Eloquent {
 
 	use ValidatableTrait, CreatedByTrait;
 
-	protected $table = "teams";
+	protected $table = "schemes";
 	protected $fillable = ["label", "description", "creator"];
-	protected $rules = [
+	private $validationRules = [
 		"label"=>"required",
 		"creator"=>"required|exists:users,id"
 	];
 
-	public function members() {
-		return $this->belongsToMany("Barometer\BarometerUser", "team_user", "team_id", "user_id");
+	public function statuses() {
+		return $this->hasMany("Barometer\Status");
 	}
+
 
 }
