@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,7 +10,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', "Barometer\Controllers\OverviewController@overview");
+
+Route::post("/login", "Barometer\Controllers\AccessController@loginUser");
+Route::any("/logout", "Barometer\Controllers\AccessController@logoutUser");

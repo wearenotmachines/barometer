@@ -43,7 +43,7 @@ class CreateBaseTables extends Migration {
 			$table->increments("id");
 			$table->timestamps();
 			$table->softDeletes();
-			$table->string("name");
+			$table->string("label");
 			$table->string("description")->nullable();
 			$table->boolean("active")->default(1);
 			$table->integer("creator")->unsigned();
