@@ -14,3 +14,13 @@ Route::get('/', "Barometer\Controllers\OverviewController@overview");
 
 Route::post("/login", "Barometer\Controllers\AccessController@loginUser");
 Route::any("/logout", "Barometer\Controllers\AccessController@logoutUser");
+
+/**
+ * Status Routes
+ */
+Route::get("/status", "Barometer\Controllers\StatusesController@getReportInFragment");
+
+/**
+ * Scheme Routes
+ */
+Route::get("/scheme/{id}", "Barometer\Controllers\SchemesController@view");

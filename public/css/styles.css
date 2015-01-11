@@ -1,0 +1,24 @@
+.status-button {
+
+	background: none;
+	border: 1px solid #cfcfcf;
+	padding: 4px;
+	width: 20%;
+	margin: 20px;
+	height: 208px;
+	width: 208px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	cursor:pointer;
+	outline: 0;
+}
+
+.status-button img {
+	width: 200px;
+	height: 200px;
+	outline: 0;
+}
+
+input::-moz-focus-inner, button::-moz-focus-inner { 
+  border: 0; 
+}
