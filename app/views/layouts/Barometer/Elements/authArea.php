@@ -10,7 +10,7 @@
 	<p>Hello <?= Auth::user()->forename; ?>!</p>
 	<nav>
 	<ul>
-		<li><a href="/report-in">Report in</a></li>
+		<li><a data-role="report-in-trigger" href="/report-in">Report in</a></li>
 		<li><a href="/mooch">Mooch about</a></li>
 		<li><a href="/logout">Log out</a></li>
 	</ul>
