@@ -8,7 +8,7 @@ class BarometerUser extends \User {
 use ValidatableTrait;
 
 	protected $table = "users";
-	protected $fillable = ["forename", "surname", "email", "password", "created_at", "updated_at"];
+	protected $fillable = ["forename", "surname", "email", "password", "created_at", "updated_at", "isAdmin"];
 	private $rules = [
 			"forename"=>"required", 
 			"surname"=>"required",

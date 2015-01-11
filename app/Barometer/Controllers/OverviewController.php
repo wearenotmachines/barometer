@@ -11,7 +11,7 @@ class OverviewController extends \BaseController {
 
 	public function overview() {
 		$this->title = "How's everyone doing?";
-		$this->layout->content = "fine";
+		$this->layout->content = \View::make("Barometer.Overview.overview", $this->data);
 	}
 
 }

@@ -1,5 +1,6 @@
 <?php
-
+ini_set("display_errors", "on");
+error_reporting(E_ALL);
 class BaseController extends Controller {
 
 	protected $data = [];
@@ -7,9 +8,9 @@ class BaseController extends Controller {
 	protected $bodyClasses = [];
 
 	public function __construct() {
-		View::share("data", $this->data);
 		$this->data['title'] =& $this->title;
 		$this->data['bodyClasses'] =& $this->bodyClasses;
+		View::share("data", $this->data);
 	}
 
 	/**
@@ -21,7 +22,7 @@ class BaseController extends Controller {
 	{
 		if ( ! is_null($this->layout))
 		{
-			$this->layout = View::make($this->layout, $this->data)->nest("authArea", "layouts.Barometer.Elements.authArea", $this->data);
+			$this->layout = View::make($this->layout, $this->data)->nest("authArea", "layouts.Barometer.Elements.authArea", $this->data)->nest("scripts", "Barometer.Elements.scripts");
 		}
 	}
 
